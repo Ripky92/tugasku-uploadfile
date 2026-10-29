@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tugasku — Basis Data · M RIFKY ALAMSYAH</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-top">
+        <span class="brand-pill">📚 Tugasku</span>
+        <a class="admin-link" href="admin.html">Admin →</a>
+      </div>
+      <h1 class="hero-title">Tugas BASIS DATA</h1>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-label">Mahasiswa</span>
+          <span class="meta-value">M RIFKY ALAMSYAH</span>
+        </div>
+        <div class="meta-divider" aria-hidden="true"></div>
+        <div class="meta-item">
+          <span class="meta-label">Dosen Pengampu</span>
+          <span class="meta-value">Agung Santoso, M.Kom</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="section-header">
+      <h2>Daftar Tugas Terkumpul</h2>
+      <span id="count-badge" class="badge badge-neutral" hidden>0 Tugas</span>
+    </section>
+
+    <main id="list" class="card-list" aria-live="polite">
+      <div class="empty">Memuat daftar tugas...</div>
+    </main>
+
+    <footer class="footer">
+      <span>Tugasku · Pengumpulan Tugas Mata Kuliah Basis Data</span>
+    </footer>
+  </div>
+
+  <script type="module" src="js/public.js"></script>
+</body>
+</html>
