@@ -144,10 +144,17 @@ loginForm.addEventListener("submit", async (e) => {
     showView("panel");
     await refreshList();
   } catch (err) {
-    const msg =
-      err.message && err.message.includes("Supabase belum dikonfigurasi")
-        ? err.message
-        : "Email atau sandi salah.";
+    console.error("Login error detail:", err);
+    let msg = "Email atau sandi salah.";
+    if (err.message) {
+      if (err.message.includes("Supabase belum dikonfigurasi")) {
+        msg = err.message;
+      } else if (err.message.toLowerCase().includes("email not confirmed")) {
+        msg = "Email belum dikonfirmasi di Supabase (Pastikan centang 'Auto Confirm User' saat membuat user).";
+      } else {
+        msg = `Gagal masuk: ${err.message}`;
+      }
+    }
     showNotice(loginNotice, msg);
   } finally {
     loginBtn.disabled = false;

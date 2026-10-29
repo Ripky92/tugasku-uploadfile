@@ -1,5 +1,3 @@
-// Isi kedua nilai di bawah ini dengan Project URL dan anon public key dari proyek Supabase Anda.
-// Lihat panduan langkah demi langkah di README.md.
-export const SUPABASE_URL = "GANTI_DENGAN_SUPABASE_URL_ANDA";
-export const SUPABASE_ANON_KEY = "GANTI_DENGAN_SUPABASE_ANON_KEY_ANDA";
+export const SUPABASE_URL = "https://twttarfudlncqomudqiz.supabase.co";
+export const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR3dHRhcmZ1ZGxuY3FvbXVkcWl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMyNjYxMzYsImV4cCI6MjEwODg0MjEzNn0.OSeAebo5bqMsavxRuWxvEbzIJHmOL7Bh6IRJJCztDiM";
 
