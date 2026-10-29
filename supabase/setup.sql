@@ -64,3 +64,4 @@ create policy "Admin boleh menghapus file tugas"
   for delete
   to authenticated
   using (bucket_id = 'tugas-files');
+
