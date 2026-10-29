@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin · Tugasku</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page">
+    <!-- Bagian Login Admin (hidden secara default) -->
+    <section id="login" hidden>
+      <header class="hero">
+        <div class="hero-top">
+          <span class="brand-pill">📚 Tugasku · Admin</span>
+          <a class="admin-link" href="index.html">← Halaman Dosen</a>
+        </div>
+        <h1 class="hero-title">Masuk ke Panel Admin</h1>
+        <p style="margin: 0; color: rgba(255,255,255,0.85); font-size: 0.95rem;">
+          Khusus pemilik situs (M RIFKY ALAMSYAH) untuk mengelola tugas Basis Data.
+        </p>
+      </header>
+
+      <div class="panel-box">
+        <h2>Login Admin</h2>
+        <p class="panel-subtitle">Masukkan email dan kata sandi akun admin Anda.</p>
+
+        <div id="login-notice" class="notice notice-error" hidden></div>
+
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="username" placeholder="nama@email.com" required />
+          </div>
+          <div class="field">
+            <label for="password">Kata Sandi</label>
+            <input type="password" id="password" name="password" autocomplete="current-password" placeholder="••••••••" required />
+          </div>
+          <button type="submit" id="login-btn" class="btn">Masuk</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Bagian Panel Admin (hidden secara default) -->
+    <section id="panel" hidden>
+      <header class="hero">
+        <div class="hero-top">
+          <span class="brand-pill">📚 Tugasku · Admin</span>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <a class="admin-link" href="index.html">Halaman Dosen</a>
+            <button type="button" id="logout-btn" class="btn btn-ghost">Keluar</button>
+          </div>
+        </div>
+        <h1 class="hero-title">Kelola Tugas BASIS DATA</h1>
+      </header>
+
+      <div class="panel-box">
+        <h2>Unggah Tugas Baru</h2>
+        <p class="panel-subtitle">Format yang didukung: PDF atau Word (.pdf, .doc, .docx), maksimal 10 MB.</p>
+
+        <div id="upload-notice" class="notice" hidden></div>
+
+        <form id="upload-form" novalidate>
+          <div class="field">
+            <label for="judul">Judul Tugas</label>
+            <input type="text" id="judul" name="judul" placeholder="Contoh: Tugas 4 – Relasi & Join" required />
+          </div>
+          <div class="field">
+            <label for="berkas">Pilih Berkas Tugas</label>
+            <input type="file" id="berkas" name="berkas" accept=".pdf,.doc,.docx" required />
+            <span class="field-hint">Jangan sertakan data pribadi sensitif karena halaman unduhan bersifat terbuka.</span>
+          </div>
+          <button type="submit" id="upload-btn" class="btn">Unggah Tugas</button>
+        </form>
+      </div>
+
+      <div class="section-header">
+        <h2>Tugas yang Sudah Diunggah</h2>
+      </div>
+      <div id="admin-list" class="card-list" aria-live="polite">
+        <div class="empty">Memuat daftar tugas...</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Tugasku · Panel Admin M RIFKY ALAMSYAH</span>
+    </footer>
+  </div>
+
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>
