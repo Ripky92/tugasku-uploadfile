@@ -6,6 +6,7 @@ import {
   buildStoragePath,
   fileTypeLabel,
   formatDate,
+  buildDownloadFilename,
 } from "../js/utils.js";
 
 const MB = 1024 * 1024;
@@ -48,5 +49,15 @@ test("fileTypeLabel", () => {
 });
 test("formatDate memakai locale id-ID", () => {
   assert.match(formatDate("2026-10-28T10:00:00Z"), /28 Okt(?:ober)? 2026/);
+});
+test("buildDownloadFilename menghasilkan nama unduhan rapi sesuai judul dan ekstensi asli", () => {
+  assert.equal(
+    buildDownloadFilename("Tugas 1 – Pengenalan SQL", "1700-tugas-1.pdf"),
+    "Tugas 1 - Pengenalan SQL.pdf"
+  );
+  assert.equal(
+    buildDownloadFilename("ERD / Relasi: Bab 2?", "1700-erd.DOCX"),
+    "ERD - Relasi- Bab 2.docx"
+  );
 });
 

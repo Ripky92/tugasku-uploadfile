@@ -1,6 +1,6 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from "./config.js";
-import { buildStoragePath } from "./utils.js";
+import { buildStoragePath, buildDownloadFilename } from "./utils.js";
 
 const BUCKET = "tugas-files";
 
@@ -36,7 +36,11 @@ export async function listTugas() {
   if (error) throw new Error(error.message);
 
   return (data ?? []).map((row) => {
-    const { data: pub } = supabase.storage.from(BUCKET).getPublicUrl(row.file_path);
+    const { data: pub } = supabase.storage
+      .from(BUCKET)
+      .getPublicUrl(row.file_path, {
+        download: buildDownloadFilename(row.judul, row.file_path),
+      });
     return {
       id: row.id,
       judul: row.judul,
@@ -115,3 +119,4 @@ export async function isSignedIn() {
     return false;
   }
 }
+

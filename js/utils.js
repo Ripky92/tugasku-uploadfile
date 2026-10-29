@@ -45,3 +45,14 @@ export function formatDate(iso) {
   });
 }
 
+export function buildDownloadFilename(judul, filePath) {
+  const ext = extOf(filePath) || "pdf";
+  const cleaned = (judul || "tugas")
+    .replace(/[–—]/g, "-")
+    .replace(/[<>:"/\\|?*\x00-\x1F]+/g, "-")
+    .replace(/\s+/g, " ")
+    .replace(/[- ]+$/g, "")
+    .trim();
+  return `${cleaned || "tugas"}.${ext}`;
+}
+
