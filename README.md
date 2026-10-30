@@ -67,15 +67,4 @@ Agar hanya Anda yang bisa login dan mengunggah tugas:
 - **Proyek Supabase Gratis Bisa Dijeda (Paused):** Pada paket gratis Supabase, jika website sama sekali tidak dibuka atau dipakai selama **7 hari berturut-turut**, proyek database dapat dijeda otomatis. Jangan khawatir, file tugas Anda **tidak hilang** — cukup buka dashboard Supabase dan klik tombol **Restore project** (aktif kembali dalam ~1 menit), terutama sebelum dosen memeriksa tugas.
 - **Privasi Berkas:** Karena halaman daftar tugas sengaja dibuat terbuka tanpa sandi agar memudahkan dosen, siapa saja yang mengetahui link website Anda dapat mengunduh file tugas tersebut. Hindari menaruh data pribadi sensitif (seperti nomor KTP atau sandi pribadi) di dalam dokumen tugas.
 
----
-
-## Menjalankan di Komputer Lokal (Opsional)
-Karena menggunakan JavaScript Module (`type="module"`), jalankan melalui server lokal sederhana di folder proyek ini:
-```bash
-python3 -m http.server 8000
-```
-Lalu buka `http://localhost:8000` di browser. Untuk menjalankan unit test validasi:
-```bash
-node --test "tests/*.test.mjs"
-```
 
